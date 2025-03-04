@@ -1,4 +1,4 @@
-import useNoteStore from '../stores/notes'
+import useNoteStore from '@/stores/notes'
 
 const NoteList: React.FC = () => {
   const notes = useNoteStore((state) => state.notes)

@@ -1,5 +1,5 @@
 import { useState, type FormEvent } from 'react'
-import useNoteStore from '../stores/notes'
+import useNoteStore from '@/stores/notes'
 
 const NoteForm: React.FC = () => {
   const [title, setTitle] = useState<string>('')

@@ -1,7 +1,7 @@
 import { createFileRoute } from '@tanstack/react-router'
-import NoteForm from '../components/NoteForm'
-import NotesList from '../components/NotesList'
-import '../styles/Notes.css'
+import NoteForm from '@/components/NoteForm'
+import NotesList from '@/components/NotesList'
+import '@/styles/Notes.css'
 
 export const Route = createFileRoute('/notes')({
   component: NotesComponent
