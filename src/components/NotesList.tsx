@@ -1,5 +1,4 @@
-import React from 'react'
-import useNoteStore from '../stores/notesStore'
+import useNoteStore from '../stores/notes'
 
 const NoteList: React.FC = () => {
   const notes = useNoteStore((state) => state.notes)
