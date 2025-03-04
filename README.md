@@ -12,7 +12,7 @@ The default readme says TanStack has a store why not use that?
 `/notes`
 
 
-So the point here is to demo how to use zustard state management with the tanstack routing (SPA)
+So the point here is to demo how to use zustand state management with the tanstack routing (SPA)
 
 # Getting Started
 
