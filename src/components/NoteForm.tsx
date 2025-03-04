@@ -2,11 +2,11 @@ import React, { useState } from 'react'
 import useNoteStore from '../stores/notesStore'
 
 const NoteForm: React.FC = () => {
-  const [title, setTitle] = useState('')
-  const [content, setContent] = useState('')
-  const addNote = useNoteStore((state) => state.addNote)
+  const [title, setTitle] = useState<string>('')
+  const [content, setContent] = useState<string>('')
+  const addNote: (title: string, content: string) => void = useNoteStore((state) => state.addNote)
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = (e: React.FormEvent): void => {
     e.preventDefault()
     if (title && content) {
       addNote(title, content)

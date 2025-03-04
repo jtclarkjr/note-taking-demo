@@ -15,11 +15,11 @@ interface NoteState {
 
 const useNoteStore = create<NoteState>((set) => ({
   notes: [],
-  addNote: (title, content) =>
+  addNote: (title: string, content: string): void =>
     set((state) => ({
       notes: [...state.notes, { id: Date.now(), title, content, date: new Date().toLocaleString() }]
     })),
-  deleteNote: (id) =>
+  deleteNote: (id: number): void =>
     set((state) => ({
       notes: state.notes.filter((note) => note.id !== id)
     }))
