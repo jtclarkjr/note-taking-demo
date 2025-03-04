@@ -3,7 +3,7 @@ import useNoteStore from '../stores/notesStore'
 
 const NoteList: React.FC = () => {
   const notes = useNoteStore((state) => state.notes)
-  const deleteNote: (id: number) => void = useNoteStore((state) => state.deleteNote)
+  const deleteNote = useNoteStore((state) => state.deleteNote)
 
   return (
     <div className="note-list">
