@@ -5,7 +5,7 @@ import { RouterProvider, createRouter } from '@tanstack/react-router'
 // Import the generated route tree
 import { routeTree } from './routeTree.gen'
 
-import './styles.css'
+import './styles/styles.css'
 import reportWebVitals from './reportWebVitals.ts'
 
 // Create a new router instance
@@ -13,7 +13,7 @@ const router = createRouter({
   routeTree,
   defaultPreload: 'intent',
   scrollRestoration: true,
-  defaultStructuralSharing: true,
+  defaultStructuralSharing: true
 })
 
 // Register the router instance for type safety
@@ -30,7 +30,7 @@ if (rootElement && !rootElement.innerHTML) {
   root.render(
     <StrictMode>
       <RouterProvider router={router} />
-    </StrictMode>,
+    </StrictMode>
   )
 }
 
