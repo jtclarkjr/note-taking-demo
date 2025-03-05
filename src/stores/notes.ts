@@ -1,4 +1,5 @@
 import { create } from 'zustand'
+import { persist } from 'zustand/middleware'
 
 interface Note {
   id: number
@@ -13,16 +14,26 @@ interface NoteState {
   deleteNote: (id: number) => void
 }
 
-const useNoteStore = create<NoteState>((set) => ({
-  notes: [],
-  addNote: (title: string, content: string): void =>
-    set((state) => ({
-      notes: [...state.notes, { id: Date.now(), title, content, date: new Date().toLocaleString() }]
-    })),
-  deleteNote: (id: number): void =>
-    set((state) => ({
-      notes: state.notes.filter((note) => note.id !== id)
-    }))
-}))
+const useNoteStore = create<NoteState>()(
+  persist(
+    (set) => ({
+      notes: [],
+      addNote: (title, content) =>
+        set((state) => ({
+          notes: [
+            ...state.notes,
+            { id: Date.now(), title, content, date: new Date().toLocaleString() }
+          ]
+        })),
+      deleteNote: (id) =>
+        set((state) => ({
+          notes: state.notes.filter((note) => note.id !== id)
+        }))
+    }),
+    {
+      name: 'note-storage'
+    }
+  )
+)
 
 export default useNoteStore
