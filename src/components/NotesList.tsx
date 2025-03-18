@@ -1,3 +1,5 @@
+'use client'
+
 import useNoteStore from '@/stores/notes'
 
 const NoteList: React.FC = () => {
@@ -11,7 +13,12 @@ const NoteList: React.FC = () => {
           <h2 className="note-list__title">{note.title}</h2>
           <p className="note-list__content">{note.content}</p>
           <p className="note-list__date">{note.date}</p>
-          <button className="note-list__button" onClick={() => deleteNote(note.id)}>
+          <button
+            className="note-list__button"
+            onClick={() => {
+              deleteNote(note.id)
+            }}
+          >
             Delete
           </button>
         </div>
