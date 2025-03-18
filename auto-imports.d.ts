@@ -7,7 +7,7 @@
 export {}
 declare global {
   const Outlet: typeof import('@tanstack/react-router')['Outlet']
-  const ReactDOM: typeof import('react-dom/client')['ReactDOM']
+  const ReactDOM: typeof import('react-dom')['ReactDOM']
   const TanStackRouterDevtools: typeof import('@tanstack/router-devtools')['TanStackRouterDevtools']
   const create: typeof import('zustand')['create']
   const createFileRoute: typeof import('@tanstack/react-router')['createFileRoute']

@@ -13,7 +13,6 @@ export default defineConfig({
       imports: [
         'react',
         {
-          'react-dom/client': ['ReactDOM'],
           '@tanstack/react-router': [
             'createRouter',
             'createRootRoute', // Import 'createRootRoute' from TanStack React Router
