@@ -1,0 +1,33 @@
+{
+  "globals": {
+    "create": true,
+    "createRef": true,
+    "forwardRef": true,
+    "lazy": true,
+    "memo": true,
+    "startTransition": true,
+    "useCallback": true,
+    "useContext": true,
+    "useDebugValue": true,
+    "useDeferredValue": true,
+    "useEffect": true,
+    "useId": true,
+    "useImperativeHandle": true,
+    "useInsertionEffect": true,
+    "useLayoutEffect": true,
+    "useMemo": true,
+    "useReducer": true,
+    "useRef": true,
+    "useState": true,
+    "useSyncExternalStore": true,
+    "useTransition": true,
+    "persist": true,
+    "v4": true,
+    "Outlet": true,
+    "TanStackRouterDevtools": true,
+    "createRootRoute": true,
+    "createFileRoute": true,
+    "createRouter": true,
+    "ReactDOM": true
+  }
+}

@@ -1,7 +1,3 @@
-import { create } from 'zustand'
-import { persist } from 'zustand/middleware'
-import { v4 as uuidv4 } from 'uuid'
-
 interface Note {
   id: string
   title: string
@@ -21,10 +17,7 @@ const useNoteStore = create<NoteState>()(
       notes: [],
       addNote: (title, content) =>
         set((state) => ({
-          notes: [
-            ...state.notes,
-            { id: uuidv4(), title, content, date: new Date().toLocaleString() }
-          ]
+          notes: [...state.notes, { id: v4(), title, content, date: new Date().toLocaleString() }]
         })),
       deleteNote: (id) =>
         set((state) => ({
