@@ -16,7 +16,8 @@ export default defineConfig({
           '@tanstack/react-router': [
             'createRouter',
             'createRootRoute', // Import 'createRootRoute' from TanStack React Router
-            'createFileRoute' // Import 'createFileRoute' from TanStack React Router
+            'createFileRoute', // Import 'createFileRoute' from TanStack React Router
+            'useRouter'
           ],
 
           zustand: ['create'],

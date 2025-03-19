@@ -28,6 +28,7 @@
     "createRootRoute": true,
     "createFileRoute": true,
     "createRouter": true,
-    "ReactDOM": true
+    "ReactDOM": true,
+    "useRouter": true
   }
 }

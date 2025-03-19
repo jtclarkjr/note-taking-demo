@@ -1,6 +1,5 @@
 import logo from '@/assets/logo.svg'
 import '@/styles/App.css'
-import { useRouter } from '@tanstack/react-router'
 
 export const Route = createFileRoute('/')({
   component: App

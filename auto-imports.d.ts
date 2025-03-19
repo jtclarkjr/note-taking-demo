@@ -31,6 +31,7 @@ declare global {
   const useMemo: typeof import('react')['useMemo']
   const useReducer: typeof import('react')['useReducer']
   const useRef: typeof import('react')['useRef']
+  const useRouter: typeof import('@tanstack/react-router')['useRouter']
   const useState: typeof import('react')['useState']
   const useSyncExternalStore: typeof import('react')['useSyncExternalStore']
   const useTransition: typeof import('react')['useTransition']
