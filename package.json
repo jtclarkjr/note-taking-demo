@@ -13,6 +13,7 @@
     "@tanstack/react-router": "^1.112.0",
     "@tanstack/router-devtools": "^1.112.0",
     "@tanstack/router-plugin": "^1.112.0",
+    "jotai": "^2.12.2",
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
     "uuid": "^11.1.0",

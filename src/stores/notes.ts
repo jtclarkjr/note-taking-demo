@@ -1,3 +1,7 @@
+import { atom } from 'jotai'
+import { atomWithStorage } from 'jotai/utils'
+import { v4 as uuidv4 } from 'uuid'
+
 // Define the structure of a single note
 interface Note {
   id: string
@@ -6,37 +10,27 @@ interface Note {
   date: string
 }
 
-// Define the state and actions for the note store
-interface NoteState {
-  notes: Note[]
-  addNote: (title: string, content: string) => void
-  deleteNote: (id: string) => void
-}
+// Atom to hold the list of notes with persistence
+export const notesAtom = atomWithStorage<Note[]>('notes', [])
 
-// Create the note store using Zustand with persistence
-const useNoteStore = create<NoteState>()(
-  persist(
-    (set) => ({
-      // Initial state
-      notes: [],
-
-      // Action to add a new note
-      addNote: (title, content) =>
-        set((state) => ({
-          notes: [...state.notes, { id: v4(), title, content, date: new Date().toLocaleString() }]
-        })),
-
-      // Action to delete a note by ID
-      deleteNote: (id) =>
-        set((state) => ({
-          notes: state.notes.filter((note) => note.id !== id)
-        }))
-    }),
-    {
-      // Configuration for persistence
-      name: 'note-storage'
+// Atom to add a new note
+export const addNoteAtom = atom(
+  null,
+  (get, set, { title, content }: { title: string; content: string }) => {
+    const newNote: Note = {
+      id: uuidv4(),
+      title,
+      content,
+      date: new Date().toLocaleString()
     }
-  )
+    set(notesAtom, [...get(notesAtom), newNote])
+  }
 )
 
-export default useNoteStore
+// Atom to delete a note by ID
+export const deleteNoteAtom = atom(null, (get, set, id: string) => {
+  set(
+    notesAtom,
+    get(notesAtom).filter((note) => note.id !== id)
+  )
+})

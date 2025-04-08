@@ -1,10 +1,11 @@
 'use client'
 
-import useNoteStore from '@/stores/notes'
+import { useAtom } from 'jotai'
+import { notesAtom, deleteNoteAtom } from '@/stores/notes'
 
 const NoteList: React.FC = () => {
-  const notes = useNoteStore((state) => state.notes)
-  const deleteNote = useNoteStore((state) => state.deleteNote)
+  const [notes] = useAtom(notesAtom)
+  const [, deleteNote] = useAtom(deleteNoteAtom)
 
   return (
     <div className="note-list">
