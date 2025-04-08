@@ -1,3 +1,4 @@
+import { useRouter } from '@tanstack/react-router'
 import logo from '@/assets/logo.svg'
 import '@/styles/App.css'
 
@@ -8,7 +9,7 @@ export const Route = createFileRoute('/')({
 function App() {
   const router = useRouter()
   // TODO: config default route to be /notes later
-  router.navigate({to: '/notes'})
+  router.navigate({ to: '/notes' })
 
   return (
     <div className="App">

@@ -1,5 +1,3 @@
-'use server'
-
 import useNoteStore from '@/stores/notes'
 
 export function addNoteAction(formData: FormData) {

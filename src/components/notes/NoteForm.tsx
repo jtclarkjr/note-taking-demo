@@ -1,3 +1,5 @@
+'use client'
+
 import { addNoteAction } from '@/actions/notes'
 
 const NoteForm: React.FC = () => {
