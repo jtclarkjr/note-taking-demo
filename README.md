@@ -1,4 +1,4 @@
-TanStack React App with Zustand demo
+TanStack React App with Jotai demo
 
 Created using: 
 ```
